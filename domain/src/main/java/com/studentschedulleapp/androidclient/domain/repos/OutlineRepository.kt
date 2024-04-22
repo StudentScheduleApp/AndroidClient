@@ -1,31 +1,49 @@
 package com.studentschedulleapp.androidclient.domain.repos
 
+import com.studentschedulleapp.androidclient.domain.models.CustomLesson
 import com.studentschedulleapp.androidclient.domain.models.Group
+import com.studentschedulleapp.androidclient.domain.models.Outline
 import com.studentschedulleapp.androidclient.domain.models.User
 
-interface GroupRepository {
+interface OutlineRepository {
 
     fun getById(
         id: Long,
 
-        onSuccess: (Group) -> Unit,
+        onSuccess: (Outline) -> Unit,
         onNotFound: () -> Unit,
         onServerError: () -> Unit,
         onClientError: () -> Unit,
         onUnAuthorized: () -> Unit
     )
-    fun create(
-        data: Group,
+    fun getBySpecificLessonId(
+        id: Long,
 
-        onSuccess: (Group) -> Unit,
+        onSuccess: (List<Outline>) -> Unit,
+        onServerError: () -> Unit,
+        onClientError: () -> Unit,
+        onUnAuthorized: () -> Unit
+    )
+    fun getByUserId(
+        id: Long,
+
+        onSuccess: (List<Outline>) -> Unit,
+        onServerError: () -> Unit,
+        onClientError: () -> Unit,
+        onUnAuthorized: () -> Unit
+    )
+    fun create(
+        data: Outline,
+
+        onSuccess: (Outline) -> Unit,
         onServerError: () -> Unit,
         onClientError: () -> Unit,
         onUnAuthorized: () -> Unit
     )
     fun edit(
-        data: Group,
+        data: Outline,
 
-        onSuccess: (Group) -> Unit,
+        onSuccess: (Outline) -> Unit,
         onNotFound: () -> Unit,
         onServerError: () -> Unit,
         onClientError: () -> Unit,

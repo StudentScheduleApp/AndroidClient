@@ -13,3 +13,4 @@
 .externalNativeBuild
 .cxx
 local.properties
+/.settings/org.eclipse.buildship.core.prefs

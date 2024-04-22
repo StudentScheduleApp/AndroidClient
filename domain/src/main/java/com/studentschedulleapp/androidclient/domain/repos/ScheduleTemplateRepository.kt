@@ -1,31 +1,41 @@
 package com.studentschedulleapp.androidclient.domain.repos
 
+import com.studentschedulleapp.androidclient.domain.models.CustomLesson
 import com.studentschedulleapp.androidclient.domain.models.Group
+import com.studentschedulleapp.androidclient.domain.models.ScheduleTemplate
 import com.studentschedulleapp.androidclient.domain.models.User
 
-interface GroupRepository {
+interface ScheduleTemplateRepository {
 
     fun getById(
         id: Long,
 
-        onSuccess: (Group) -> Unit,
+        onSuccess: (ScheduleTemplate) -> Unit,
         onNotFound: () -> Unit,
         onServerError: () -> Unit,
         onClientError: () -> Unit,
         onUnAuthorized: () -> Unit
     )
-    fun create(
-        data: Group,
+    fun getByGroupId(
+        id: Long,
 
-        onSuccess: (Group) -> Unit,
+        onSuccess: (List<ScheduleTemplate>) -> Unit,
+        onServerError: () -> Unit,
+        onClientError: () -> Unit,
+        onUnAuthorized: () -> Unit
+    )
+    fun create(
+        data: ScheduleTemplate,
+
+        onSuccess: (ScheduleTemplate) -> Unit,
         onServerError: () -> Unit,
         onClientError: () -> Unit,
         onUnAuthorized: () -> Unit
     )
     fun edit(
-        data: Group,
+        data: ScheduleTemplate,
 
-        onSuccess: (Group) -> Unit,
+        onSuccess: (ScheduleTemplate) -> Unit,
         onNotFound: () -> Unit,
         onServerError: () -> Unit,
         onClientError: () -> Unit,

@@ -1,31 +1,41 @@
 package com.studentschedulleapp.androidclient.domain.repos
 
+import com.studentschedulleapp.androidclient.domain.models.CustomLesson
 import com.studentschedulleapp.androidclient.domain.models.Group
+import com.studentschedulleapp.androidclient.domain.models.OutlineMediaComment
 import com.studentschedulleapp.androidclient.domain.models.User
 
-interface GroupRepository {
+interface OutlineMediaCommentRepository {
 
     fun getById(
         id: Long,
 
-        onSuccess: (Group) -> Unit,
+        onSuccess: (OutlineMediaComment) -> Unit,
         onNotFound: () -> Unit,
         onServerError: () -> Unit,
         onClientError: () -> Unit,
         onUnAuthorized: () -> Unit
     )
-    fun create(
-        data: Group,
+    fun getByOutlineMediaId(
+        id: Long,
 
-        onSuccess: (Group) -> Unit,
+        onSuccess: (List<OutlineMediaComment>) -> Unit,
+        onServerError: () -> Unit,
+        onClientError: () -> Unit,
+        onUnAuthorized: () -> Unit
+    )
+    fun create(
+        data: OutlineMediaComment,
+
+        onSuccess: (OutlineMediaComment) -> Unit,
         onServerError: () -> Unit,
         onClientError: () -> Unit,
         onUnAuthorized: () -> Unit
     )
     fun edit(
-        data: Group,
+        data: OutlineMediaComment,
 
-        onSuccess: (Group) -> Unit,
+        onSuccess: (OutlineMediaComment) -> Unit,
         onNotFound: () -> Unit,
         onServerError: () -> Unit,
         onClientError: () -> Unit,
