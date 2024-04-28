@@ -7,11 +7,16 @@ android {
     namespace 'com.studentschedulleapp.androidclient'
     compileSdk 34
 
+    buildFeatures {
+        buildConfig = true
+    }
     defaultConfig {
         minSdk 26
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+
+        buildConfigField 'java.util.Hashtable<String, String>', 'secrets', getSecretProperties()
     }
 
     buildTypes {
@@ -27,6 +32,25 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+}
+
+def getSecretProperties() {
+    def devProperties = new Properties()
+    try {
+        devProperties.load(new FileInputStream(file(getRootDir().getPath() + File.separator + 'secret.properties')))
+    } catch (FileNotFoundException e) {
+        devProperties = null
+        System.out.println('devProperties value is null')
+    }
+    def prefix = 'new java.util.Hashtable<String, String>(){{ '
+    def suffix = '}}'
+    def value = ''
+    if (devProperties != null) {
+        for (d in devProperties) {
+            value += String.format('put("%s",%s); ', d.key, "\"" + d.value + "\"")
+        }
+    }
+    return String.format('%s%s%s', prefix, value, suffix)
 }
 
 dependencies {
