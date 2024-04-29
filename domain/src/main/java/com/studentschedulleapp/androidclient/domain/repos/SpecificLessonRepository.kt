@@ -9,6 +9,7 @@ import com.studentschedulleapp.androidclient.domain.models.User
 interface SpecificLessonRepository {
 
     fun getById(
+        accessToken: String,
         id: Long,
 
         onSuccess: (SpecificLesson) -> Unit,
@@ -18,6 +19,7 @@ interface SpecificLessonRepository {
         onUnAuthorized: () -> Unit
     )
     fun getByGroupId(
+        accessToken: String,
         id: Long,
 
         onSuccess: (List<SpecificLesson>) -> Unit,
@@ -26,6 +28,7 @@ interface SpecificLessonRepository {
         onUnAuthorized: () -> Unit
     )
     fun create(
+        accessToken: String,
         data: SpecificLesson,
 
         onSuccess: (SpecificLesson) -> Unit,
@@ -34,7 +37,9 @@ interface SpecificLessonRepository {
         onUnAuthorized: () -> Unit
     )
     fun edit(
+        accessToken: String,
         data: SpecificLesson,
+        editedFields: Set<String>,
 
         onSuccess: (SpecificLesson) -> Unit,
         onNotFound: () -> Unit,
@@ -43,6 +48,7 @@ interface SpecificLessonRepository {
         onUnAuthorized: () -> Unit
     )
     fun delete(
+        accessToken: String,
         id: Long,
 
         onSuccess: () -> Unit,

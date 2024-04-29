@@ -5,6 +5,7 @@ import com.studentschedulleapp.androidclient.domain.models.User
 interface UserRepository {
 
     fun getById(
+        accessToken: String,
         id: Long,
 
         onSuccess: (User) -> Unit,
@@ -14,6 +15,7 @@ interface UserRepository {
         onUnAuthorized: () -> Unit
     )
     fun getByEmail(
+        accessToken: String,
         email: String,
 
         onSuccess: (User) -> Unit,
@@ -23,14 +25,16 @@ interface UserRepository {
         onUnAuthorized: () -> Unit
     )
 
-   // fun edit(
-   //     data: User,
+    fun edit(
+        accessToken: String,
+        data: User,
+        editedFields: Set<String>,
 
-   //     onSuccess: (User) -> Unit,
-   //     onNotFound: () -> Unit,
-   //     onServerError: () -> Unit,
-   //     onClientError: () -> Unit,
-   //     onUnAuthorized: () -> Unit
-   // )
+        onSuccess: (User) -> Unit,
+        onNotFound: () -> Unit,
+        onServerError: () -> Unit,
+        onClientError: () -> Unit,
+        onUnAuthorized: () -> Unit
+    )
 
 }

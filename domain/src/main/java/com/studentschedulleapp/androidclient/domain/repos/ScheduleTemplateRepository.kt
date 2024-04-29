@@ -8,6 +8,7 @@ import com.studentschedulleapp.androidclient.domain.models.User
 interface ScheduleTemplateRepository {
 
     fun getById(
+        accessToken: String,
         id: Long,
 
         onSuccess: (ScheduleTemplate) -> Unit,
@@ -17,6 +18,7 @@ interface ScheduleTemplateRepository {
         onUnAuthorized: () -> Unit
     )
     fun getByGroupId(
+        accessToken: String,
         id: Long,
 
         onSuccess: (List<ScheduleTemplate>) -> Unit,
@@ -25,6 +27,7 @@ interface ScheduleTemplateRepository {
         onUnAuthorized: () -> Unit
     )
     fun create(
+        accessToken: String,
         data: ScheduleTemplate,
 
         onSuccess: (ScheduleTemplate) -> Unit,
@@ -33,7 +36,9 @@ interface ScheduleTemplateRepository {
         onUnAuthorized: () -> Unit
     )
     fun edit(
+        accessToken: String,
         data: ScheduleTemplate,
+        editedFields: Set<String>,
 
         onSuccess: (ScheduleTemplate) -> Unit,
         onNotFound: () -> Unit,
@@ -42,6 +47,7 @@ interface ScheduleTemplateRepository {
         onUnAuthorized: () -> Unit
     )
     fun delete(
+        accessToken: String,
         id: Long,
 
         onSuccess: () -> Unit,

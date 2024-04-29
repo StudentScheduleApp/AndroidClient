@@ -8,6 +8,7 @@ import com.studentschedulleapp.androidclient.domain.models.User
 interface OutlineRepository {
 
     fun getById(
+        accessToken: String,
         id: Long,
 
         onSuccess: (Outline) -> Unit,
@@ -17,6 +18,7 @@ interface OutlineRepository {
         onUnAuthorized: () -> Unit
     )
     fun getBySpecificLessonId(
+        accessToken: String,
         id: Long,
 
         onSuccess: (List<Outline>) -> Unit,
@@ -25,6 +27,7 @@ interface OutlineRepository {
         onUnAuthorized: () -> Unit
     )
     fun getByUserId(
+        accessToken: String,
         id: Long,
 
         onSuccess: (List<Outline>) -> Unit,
@@ -33,6 +36,7 @@ interface OutlineRepository {
         onUnAuthorized: () -> Unit
     )
     fun create(
+        accessToken: String,
         data: Outline,
 
         onSuccess: (Outline) -> Unit,
@@ -41,7 +45,9 @@ interface OutlineRepository {
         onUnAuthorized: () -> Unit
     )
     fun edit(
+        accessToken: String,
         data: Outline,
+        editedFields: Set<String>,
 
         onSuccess: (Outline) -> Unit,
         onNotFound: () -> Unit,
@@ -50,6 +56,7 @@ interface OutlineRepository {
         onUnAuthorized: () -> Unit
     )
     fun delete(
+        accessToken: String,
         id: Long,
 
         onSuccess: () -> Unit,

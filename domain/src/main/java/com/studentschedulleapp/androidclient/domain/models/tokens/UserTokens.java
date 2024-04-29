@@ -1,4 +1,4 @@
-package com.studentschedulleapp.androidclient.domain.models;
+package com.studentschedulleapp.androidclient.domain.models.tokens;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserTokens {
-    private Long userId;
-    private String accessToken;
-    private String refreshToken;
+    private Token accessToken;
+    private Token refreshToken;
 }

@@ -6,6 +6,7 @@ import com.studentschedulleapp.androidclient.domain.models.User
 interface GroupRepository {
 
     fun getById(
+        accessToken: String,
         id: Long,
 
         onSuccess: (Group) -> Unit,
@@ -15,6 +16,7 @@ interface GroupRepository {
         onUnAuthorized: () -> Unit
     )
     fun create(
+        accessToken: String,
         data: Group,
 
         onSuccess: (Group) -> Unit,
@@ -23,7 +25,9 @@ interface GroupRepository {
         onUnAuthorized: () -> Unit
     )
     fun edit(
+        accessToken: String,
         data: Group,
+        editedFields: Set<String>,
 
         onSuccess: (Group) -> Unit,
         onNotFound: () -> Unit,
@@ -32,6 +36,7 @@ interface GroupRepository {
         onUnAuthorized: () -> Unit
     )
     fun delete(
+        accessToken: String,
         id: Long,
 
         onSuccess: () -> Unit,

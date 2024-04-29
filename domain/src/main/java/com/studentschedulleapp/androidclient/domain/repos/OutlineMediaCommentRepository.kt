@@ -8,6 +8,7 @@ import com.studentschedulleapp.androidclient.domain.models.User
 interface OutlineMediaCommentRepository {
 
     fun getById(
+        accessToken: String,
         id: Long,
 
         onSuccess: (OutlineMediaComment) -> Unit,
@@ -17,6 +18,7 @@ interface OutlineMediaCommentRepository {
         onUnAuthorized: () -> Unit
     )
     fun getByOutlineMediaId(
+        accessToken: String,
         id: Long,
 
         onSuccess: (List<OutlineMediaComment>) -> Unit,
@@ -25,6 +27,7 @@ interface OutlineMediaCommentRepository {
         onUnAuthorized: () -> Unit
     )
     fun create(
+        accessToken: String,
         data: OutlineMediaComment,
 
         onSuccess: (OutlineMediaComment) -> Unit,
@@ -33,7 +36,9 @@ interface OutlineMediaCommentRepository {
         onUnAuthorized: () -> Unit
     )
     fun edit(
+        accessToken: String,
         data: OutlineMediaComment,
+        editedFields: Set<String>,
 
         onSuccess: (OutlineMediaComment) -> Unit,
         onNotFound: () -> Unit,
@@ -42,6 +47,7 @@ interface OutlineMediaCommentRepository {
         onUnAuthorized: () -> Unit
     )
     fun delete(
+        accessToken: String,
         id: Long,
 
         onSuccess: () -> Unit,

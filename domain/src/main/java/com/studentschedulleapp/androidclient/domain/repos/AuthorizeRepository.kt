@@ -1,6 +1,6 @@
 package com.studentschedulleapp.androidclient.domain.repos
 
-import com.studentschedulleapp.androidclient.domain.models.UserTokens
+import com.studentschedulleapp.androidclient.domain.models.tokens.UserTokens
 
 
 interface AuthorizeRepository {
