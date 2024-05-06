@@ -13,8 +13,8 @@ interface OutlineMediaCommentRepository {
 
         onSuccess: (OutlineMediaComment) -> Unit,
         onNotFound: () -> Unit,
-        onServerError: () -> Unit,
-        onClientError: () -> Unit,
+        onExternalError: () -> Unit,
+        onInternalError: () -> Unit,
         onUnAuthorized: () -> Unit
     )
     fun getByOutlineMediaId(
@@ -22,8 +22,8 @@ interface OutlineMediaCommentRepository {
         id: Long,
 
         onSuccess: (List<OutlineMediaComment>) -> Unit,
-        onServerError: () -> Unit,
-        onClientError: () -> Unit,
+        onExternalError: () -> Unit,
+        onInternalError: () -> Unit,
         onUnAuthorized: () -> Unit
     )
     fun create(
@@ -31,8 +31,8 @@ interface OutlineMediaCommentRepository {
         data: OutlineMediaComment,
 
         onSuccess: (OutlineMediaComment) -> Unit,
-        onServerError: () -> Unit,
-        onClientError: () -> Unit,
+        onExternalError: () -> Unit,
+        onInternalError: () -> Unit,
         onUnAuthorized: () -> Unit
     )
     fun edit(
@@ -42,8 +42,8 @@ interface OutlineMediaCommentRepository {
 
         onSuccess: (OutlineMediaComment) -> Unit,
         onNotFound: () -> Unit,
-        onServerError: () -> Unit,
-        onClientError: () -> Unit,
+        onExternalError: () -> Unit,
+        onInternalError: () -> Unit,
         onUnAuthorized: () -> Unit
     )
     fun delete(
@@ -52,8 +52,8 @@ interface OutlineMediaCommentRepository {
 
         onSuccess: () -> Unit,
         onNotFound: () -> Unit,
-        onServerError: () -> Unit,
-        onClientError: () -> Unit,
+        onExternalError: () -> Unit,
+        onInternalError: () -> Unit,
         onUnAuthorized: () -> Unit
     )
 

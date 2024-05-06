@@ -13,8 +13,8 @@ interface MemberRepository {
 
         onSuccess: (Member) -> Unit,
         onNotFound: () -> Unit,
-        onServerError: () -> Unit,
-        onClientError: () -> Unit,
+        onExternalError: () -> Unit,
+        onInternalError: () -> Unit,
         onUnAuthorized: () -> Unit
     )
     fun getByGroupId(
@@ -22,8 +22,8 @@ interface MemberRepository {
         id: Long,
 
         onSuccess: (List<Member>) -> Unit,
-        onServerError: () -> Unit,
-        onClientError: () -> Unit,
+        onExternalError: () -> Unit,
+        onInternalError: () -> Unit,
         onUnAuthorized: () -> Unit
     )
     fun getByUserId(
@@ -31,8 +31,8 @@ interface MemberRepository {
         id: Long,
 
         onSuccess: (List<Member>) -> Unit,
-        onServerError: () -> Unit,
-        onClientError: () -> Unit,
+        onExternalError: () -> Unit,
+        onInternalError: () -> Unit,
         onUnAuthorized: () -> Unit
     )
     fun create(
@@ -40,8 +40,8 @@ interface MemberRepository {
         data: Member,
 
         onSuccess: (Member) -> Unit,
-        onServerError: () -> Unit,
-        onClientError: () -> Unit,
+        onExternalError: () -> Unit,
+        onInternalError: () -> Unit,
         onUnAuthorized: () -> Unit
     )
     fun edit(
@@ -51,8 +51,8 @@ interface MemberRepository {
 
         onSuccess: (Member) -> Unit,
         onNotFound: () -> Unit,
-        onServerError: () -> Unit,
-        onClientError: () -> Unit,
+        onExternalError: () -> Unit,
+        onInternalError: () -> Unit,
         onUnAuthorized: () -> Unit
     )
     fun delete(
@@ -61,8 +61,8 @@ interface MemberRepository {
 
         onSuccess: () -> Unit,
         onNotFound: () -> Unit,
-        onServerError: () -> Unit,
-        onClientError: () -> Unit,
+        onExternalError: () -> Unit,
+        onInternalError: () -> Unit,
         onUnAuthorized: () -> Unit
     )
 

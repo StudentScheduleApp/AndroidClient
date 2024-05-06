@@ -13,8 +13,8 @@ interface OutlineMediaRepository {
 
         onSuccess: (OutlineMedia) -> Unit,
         onNotFound: () -> Unit,
-        onServerError: () -> Unit,
-        onClientError: () -> Unit,
+        onExternalError: () -> Unit,
+        onInternalError: () -> Unit,
         onUnAuthorized: () -> Unit
     )
     fun getByGroupId(
@@ -22,8 +22,8 @@ interface OutlineMediaRepository {
         id: Long,
 
         onSuccess: (List<OutlineMedia>) -> Unit,
-        onServerError: () -> Unit,
-        onClientError: () -> Unit,
+        onExternalError: () -> Unit,
+        onInternalError: () -> Unit,
         onUnAuthorized: () -> Unit
     )
     fun create(
@@ -31,8 +31,8 @@ interface OutlineMediaRepository {
         data: OutlineMedia,
 
         onSuccess: (OutlineMedia) -> Unit,
-        onServerError: () -> Unit,
-        onClientError: () -> Unit,
+        onExternalError: () -> Unit,
+        onInternalError: () -> Unit,
         onUnAuthorized: () -> Unit
     )
     fun edit(
@@ -42,8 +42,8 @@ interface OutlineMediaRepository {
 
         onSuccess: (OutlineMedia) -> Unit,
         onNotFound: () -> Unit,
-        onServerError: () -> Unit,
-        onClientError: () -> Unit,
+        onExternalError: () -> Unit,
+        onInternalError: () -> Unit,
         onUnAuthorized: () -> Unit
     )
     fun delete(
@@ -52,8 +52,8 @@ interface OutlineMediaRepository {
 
         onSuccess: () -> Unit,
         onNotFound: () -> Unit,
-        onServerError: () -> Unit,
-        onClientError: () -> Unit,
+        onExternalError: () -> Unit,
+        onInternalError: () -> Unit,
         onUnAuthorized: () -> Unit
     )
 

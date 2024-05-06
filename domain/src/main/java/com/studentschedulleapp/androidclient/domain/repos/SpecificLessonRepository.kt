@@ -14,8 +14,8 @@ interface SpecificLessonRepository {
 
         onSuccess: (SpecificLesson) -> Unit,
         onNotFound: () -> Unit,
-        onServerError: () -> Unit,
-        onClientError: () -> Unit,
+        onExternalError: () -> Unit,
+        onInternalError: () -> Unit,
         onUnAuthorized: () -> Unit
     )
     fun getByGroupId(
@@ -23,8 +23,8 @@ interface SpecificLessonRepository {
         id: Long,
 
         onSuccess: (List<SpecificLesson>) -> Unit,
-        onServerError: () -> Unit,
-        onClientError: () -> Unit,
+        onExternalError: () -> Unit,
+        onInternalError: () -> Unit,
         onUnAuthorized: () -> Unit
     )
     fun create(
@@ -32,8 +32,8 @@ interface SpecificLessonRepository {
         data: SpecificLesson,
 
         onSuccess: (SpecificLesson) -> Unit,
-        onServerError: () -> Unit,
-        onClientError: () -> Unit,
+        onExternalError: () -> Unit,
+        onInternalError: () -> Unit,
         onUnAuthorized: () -> Unit
     )
     fun edit(
@@ -43,8 +43,8 @@ interface SpecificLessonRepository {
 
         onSuccess: (SpecificLesson) -> Unit,
         onNotFound: () -> Unit,
-        onServerError: () -> Unit,
-        onClientError: () -> Unit,
+        onExternalError: () -> Unit,
+        onInternalError: () -> Unit,
         onUnAuthorized: () -> Unit
     )
     fun delete(
@@ -53,8 +53,8 @@ interface SpecificLessonRepository {
 
         onSuccess: () -> Unit,
         onNotFound: () -> Unit,
-        onServerError: () -> Unit,
-        onClientError: () -> Unit,
+        onExternalError: () -> Unit,
+        onInternalError: () -> Unit,
         onUnAuthorized: () -> Unit
     )
 

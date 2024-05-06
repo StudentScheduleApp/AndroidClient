@@ -10,8 +10,8 @@ interface AuthorizeRepository {
 
               onSuccess: () -> Unit,
               onInvalidCredentials: () -> Unit,
-              onServerError: () -> Unit,
-              onClientError: () -> Unit,
+              onExternalError: () -> Unit,
+              onInternalError: () -> Unit,
               onUnAuthorized: () -> Unit
     )
     fun register(
@@ -21,8 +21,8 @@ interface AuthorizeRepository {
         onSuccess: () -> Unit,
         onInvalidEmail: () -> Unit,
         onUsedEmail: () -> Unit,
-        onServerError: () -> Unit,
-        onClientError: () -> Unit,
+        onExternalError: () -> Unit,
+        onInternalError: () -> Unit,
         onUnAuthorized: () -> Unit
     )
     fun verify(
@@ -31,8 +31,8 @@ interface AuthorizeRepository {
 
         onSuccess: (UserTokens) -> Unit,
         onInvalidCode: () -> Unit,
-        onServerError: () -> Unit,
-        onClientError: () -> Unit,
+        onExternalError: () -> Unit,
+        onInternalError: () -> Unit,
         onUnAuthorized: () -> Unit
     )
     fun refresh(
@@ -40,8 +40,8 @@ interface AuthorizeRepository {
 
         onSuccess: (UserTokens) -> Unit,
         onInvalidRefreshToken: () -> Unit,
-        onServerError: () -> Unit,
-        onClientError: () -> Unit,
+        onExternalError: () -> Unit,
+        onInternalError: () -> Unit,
         onUnAuthorized: () -> Unit
     )
 }

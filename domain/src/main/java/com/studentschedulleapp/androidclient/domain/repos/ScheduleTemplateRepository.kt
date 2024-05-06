@@ -13,8 +13,8 @@ interface ScheduleTemplateRepository {
 
         onSuccess: (ScheduleTemplate) -> Unit,
         onNotFound: () -> Unit,
-        onServerError: () -> Unit,
-        onClientError: () -> Unit,
+        onExternalError: () -> Unit,
+        onInternalError: () -> Unit,
         onUnAuthorized: () -> Unit
     )
     fun getByGroupId(
@@ -22,8 +22,8 @@ interface ScheduleTemplateRepository {
         id: Long,
 
         onSuccess: (List<ScheduleTemplate>) -> Unit,
-        onServerError: () -> Unit,
-        onClientError: () -> Unit,
+        onExternalError: () -> Unit,
+        onInternalError: () -> Unit,
         onUnAuthorized: () -> Unit
     )
     fun create(
@@ -31,8 +31,8 @@ interface ScheduleTemplateRepository {
         data: ScheduleTemplate,
 
         onSuccess: (ScheduleTemplate) -> Unit,
-        onServerError: () -> Unit,
-        onClientError: () -> Unit,
+        onExternalError: () -> Unit,
+        onInternalError: () -> Unit,
         onUnAuthorized: () -> Unit
     )
     fun edit(
@@ -42,8 +42,8 @@ interface ScheduleTemplateRepository {
 
         onSuccess: (ScheduleTemplate) -> Unit,
         onNotFound: () -> Unit,
-        onServerError: () -> Unit,
-        onClientError: () -> Unit,
+        onExternalError: () -> Unit,
+        onInternalError: () -> Unit,
         onUnAuthorized: () -> Unit
     )
     fun delete(
@@ -52,8 +52,8 @@ interface ScheduleTemplateRepository {
 
         onSuccess: () -> Unit,
         onNotFound: () -> Unit,
-        onServerError: () -> Unit,
-        onClientError: () -> Unit,
+        onExternalError: () -> Unit,
+        onInternalError: () -> Unit,
         onUnAuthorized: () -> Unit
     )
 
