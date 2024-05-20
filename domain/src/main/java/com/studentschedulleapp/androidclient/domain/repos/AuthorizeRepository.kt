@@ -1,47 +1,38 @@
 package com.studentschedulleapp.androidclient.domain.repos
 
+import com.studentschedulleapp.androidclient.domain.exceptions.EmailIsUsedException
+import com.studentschedulleapp.androidclient.domain.exceptions.ExternalAppException
+import com.studentschedulleapp.androidclient.domain.exceptions.InternalAppException
+import com.studentschedulleapp.androidclient.domain.exceptions.InvalidCredentialsException
+import com.studentschedulleapp.androidclient.domain.exceptions.InvalidEmailException
+import com.studentschedulleapp.androidclient.domain.exceptions.UserUnAuthorizedException
 import com.studentschedulleapp.androidclient.domain.models.tokens.UserTokens
 
 
 interface AuthorizeRepository {
-
-    fun login(email: String,
-              password: String,
-
-              onSuccess: () -> Unit,
-              onInvalidCredentials: () -> Unit,
-              onExternalError: () -> Unit,
-              onInternalError: () -> Unit,
-              onUnAuthorized: () -> Unit
-    )
-    fun register(
-        email: String,
-        password: String,
-
-        onSuccess: () -> Unit,
-        onInvalidEmail: () -> Unit,
-        onUsedEmail: () -> Unit,
-        onExternalError: () -> Unit,
-        onInternalError: () -> Unit,
-        onUnAuthorized: () -> Unit
-    )
-    fun verify(
-        email: String,
-        code: Long,
-
-        onSuccess: (UserTokens) -> Unit,
-        onInvalidCode: () -> Unit,
-        onExternalError: () -> Unit,
-        onInternalError: () -> Unit,
-        onUnAuthorized: () -> Unit
-    )
-    fun refresh(
-        refreshToken: String,
-
-        onSuccess: (UserTokens) -> Unit,
-        onInvalidRefreshToken: () -> Unit,
-        onExternalError: () -> Unit,
-        onInternalError: () -> Unit,
-        onUnAuthorized: () -> Unit
-    )
+    @Throws(
+        ExternalAppException::class,
+        InternalAppException::class,
+        UserUnAuthorizedException::class,
+        InvalidCredentialsException::class)
+    fun login(login: String, password: String)
+    @Throws(
+        ExternalAppException::class,
+        InternalAppException::class,
+        UserUnAuthorizedException::class,
+        EmailIsUsedException::class,
+        InvalidEmailException::class)
+    fun register(login: String, password: String)
+    @Throws(
+        ExternalAppException::class,
+        InternalAppException::class,
+        UserUnAuthorizedException::class,
+        InvalidCredentialsException::class)
+    fun verify(login: String, code: Long): UserTokens
+    @Throws(
+        ExternalAppException::class,
+        InternalAppException::class,
+        UserUnAuthorizedException::class,
+        InvalidCredentialsException::class)
+    fun refresh(refreshToken: String): UserTokens
 }

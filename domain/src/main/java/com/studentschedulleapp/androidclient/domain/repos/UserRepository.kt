@@ -1,40 +1,31 @@
 package com.studentschedulleapp.androidclient.domain.repos
 
+import com.studentschedulleapp.androidclient.domain.exceptions.EntityNotFoundException
+import com.studentschedulleapp.androidclient.domain.exceptions.ExternalAppException
+import com.studentschedulleapp.androidclient.domain.exceptions.InternalAppException
+import com.studentschedulleapp.androidclient.domain.exceptions.UserUnAuthorizedException
 import com.studentschedulleapp.androidclient.domain.models.User
 
 interface UserRepository {
 
-    fun getById(
-        accessToken: String,
-        id: Long,
+    @Throws(
+        ExternalAppException::class,
+        InternalAppException::class,
+        UserUnAuthorizedException::class,
+        EntityNotFoundException::class)
+    fun getById(accessToken: String, id: Long): User
+    @Throws(
+        ExternalAppException::class,
+        InternalAppException::class,
+        UserUnAuthorizedException::class,
+        EntityNotFoundException::class)
+    fun getByEmail(accessToken: String, email: String): User
 
-        onSuccess: (User) -> Unit,
-        onNotFound: () -> Unit,
-        onExternalError: () -> Unit,
-        onInternalError: () -> Unit,
-        onUnAuthorized: () -> Unit
-    )
-    fun getByEmail(
-        accessToken: String,
-        email: String,
-
-        onSuccess: (User) -> Unit,
-        onNotFound: () -> Unit,
-        onExternalError: () -> Unit,
-        onInternalError: () -> Unit,
-        onUnAuthorized: () -> Unit
-    )
-
-    fun edit(
-        accessToken: String,
-        data: User,
-        editedFields: Set<String>,
-
-        onSuccess: (User) -> Unit,
-        onNotFound: () -> Unit,
-        onExternalError: () -> Unit,
-        onInternalError: () -> Unit,
-        onUnAuthorized: () -> Unit
-    )
+    @Throws(
+        ExternalAppException::class,
+        InternalAppException::class,
+        UserUnAuthorizedException::class,
+        EntityNotFoundException::class)
+    fun edit(accessToken: String, data: User, editedFields: Set<String>): User
 
 }

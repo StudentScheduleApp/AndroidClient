@@ -4,7 +4,7 @@ import com.studentschedulleapp.androidclient.BuildConfig
 
 object API{
 
-    val BASE_URL = BuildConfig.secrets["API.BASE_URL"].toString()
+    val GATEWAY_URL = BuildConfig.secrets["API.GATEWAY_URL"].toString()
     val TOKEN = BuildConfig.secrets["API.TOKEN"].toString()
 }
 

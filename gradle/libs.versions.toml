@@ -13,6 +13,7 @@ appcompat = "1.6.1"
 lombok = "1.18.28"
 material = "1.10.0"
 retrofit = "2.9.0"
+rxjava = "2.2.12"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -34,6 +35,7 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 lombok = { module = "org.projectlombok:lombok", version.ref = "lombok" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+rxjava = { module = "io.reactivex.rxjava2:rxjava", version.ref = "rxjava" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

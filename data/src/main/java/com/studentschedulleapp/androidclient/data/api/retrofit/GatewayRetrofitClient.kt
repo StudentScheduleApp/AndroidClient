@@ -3,13 +3,13 @@ import com.studentschedulleapp.androidclient.data.api.API
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-object RetrofitClient {
+object GatewayRetrofitClient {
     private var retrofit: Retrofit? = null
 
     fun getInstance(): Retrofit {
         if (retrofit == null) {
             retrofit = Retrofit.Builder()
-                .baseUrl(API.BASE_URL)
+                .baseUrl(API.GATEWAY_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
         }

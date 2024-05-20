@@ -1,60 +1,41 @@
 package com.studentschedulleapp.androidclient.domain.repos
 
+import com.studentschedulleapp.androidclient.domain.exceptions.EntityNotFoundException
+import com.studentschedulleapp.androidclient.domain.exceptions.ExternalAppException
+import com.studentschedulleapp.androidclient.domain.exceptions.InternalAppException
+import com.studentschedulleapp.androidclient.domain.exceptions.UserUnAuthorizedException
 import com.studentschedulleapp.androidclient.domain.models.CustomLesson
 import com.studentschedulleapp.androidclient.domain.models.Group
 import com.studentschedulleapp.androidclient.domain.models.LessonTemplate
 import com.studentschedulleapp.androidclient.domain.models.User
 
 interface LessonTemplateRepository {
-
-    fun getById(
-        accessToken: String,
-        id: Long,
-
-        onSuccess: (LessonTemplate) -> Unit,
-        onNotFound: () -> Unit,
-        onExternalError: () -> Unit,
-        onInternalError: () -> Unit,
-        onUnAuthorized: () -> Unit
-    )
-    fun getByScheduleTemplateId(
-        accessToken: String,
-        id: Long,
-
-        onSuccess: (List<LessonTemplate>) -> Unit,
-        onExternalError: () -> Unit,
-        onInternalError: () -> Unit,
-        onUnAuthorized: () -> Unit
-    )
-    fun create(
-        accessToken: String,
-        data: LessonTemplate,
-
-        onSuccess: (LessonTemplate) -> Unit,
-        onExternalError: () -> Unit,
-        onInternalError: () -> Unit,
-        onUnAuthorized: () -> Unit
-    )
-    fun edit(
-        accessToken: String,
-        data: LessonTemplate,
-        editedFields: Set<String>,
-
-        onSuccess: (LessonTemplate) -> Unit,
-        onNotFound: () -> Unit,
-        onExternalError: () -> Unit,
-        onInternalError: () -> Unit,
-        onUnAuthorized: () -> Unit
-    )
-    fun delete(
-        accessToken: String,
-        id: Long,
-
-        onSuccess: () -> Unit,
-        onNotFound: () -> Unit,
-        onExternalError: () -> Unit,
-        onInternalError: () -> Unit,
-        onUnAuthorized: () -> Unit
-    )
+    @Throws(
+        ExternalAppException::class,
+        InternalAppException::class,
+        UserUnAuthorizedException::class)
+    fun getById(accessToken: String, id: Long): LessonTemplate
+    @Throws(
+        ExternalAppException::class,
+        InternalAppException::class,
+        UserUnAuthorizedException::class)
+    fun getByScheduleTemplateId(accessToken: String, id: Long): List<LessonTemplate>
+    @Throws(
+        ExternalAppException::class,
+        InternalAppException::class,
+        UserUnAuthorizedException::class)
+    fun create(accessToken: String, data: LessonTemplate): LessonTemplate
+    @Throws(
+        ExternalAppException::class,
+        InternalAppException::class,
+        UserUnAuthorizedException::class,
+        EntityNotFoundException::class)
+    fun edit(accessToken: String, data: LessonTemplate, editedFields: Set<String>): LessonTemplate
+    @Throws(
+        ExternalAppException::class,
+        InternalAppException::class,
+        UserUnAuthorizedException::class,
+        EntityNotFoundException::class)
+    fun delete(accessToken: String, id: Long)
 
 }
