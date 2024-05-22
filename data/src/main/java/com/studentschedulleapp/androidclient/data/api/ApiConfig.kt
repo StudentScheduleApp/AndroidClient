@@ -10,88 +10,88 @@ object API{
 
 object AUTH{
 
-    val REGISTER_PATH = BuildConfig.secrets["AUTH.REGISTER_PATH"].toString()
-    val VERIFY_PATH = BuildConfig.secrets["AUTH.VERIFY_PATH"].toString()
-    val REFRESH_PATH = BuildConfig.secrets["AUTH.REFRESH_PATH"].toString()
-    val LOGIN_PATH = BuildConfig.secrets["AUTH.LOGIN_PATH"].toString()
+    const val REGISTER_PATH = "/auth/register/"
+    const val VERIFY_PATH = "/auth/verify/"
+    const val REFRESH_PATH = "/auth/refresh/"
+    const val LOGIN_PATH = "/auth/login/"
 }
 object USER{
 
-    val ID_PATH = BuildConfig.secrets["USER.ID_PATH"].toString()
-    val EDIT_PATH = BuildConfig.secrets["USER.EDIT_PATH"].toString()
+    const val ID_PATH = "/users/id/"
+    const val EDIT_PATH = "/users/edit/"
 }
 object MEMBER{
 
-    val ID_PATH = BuildConfig.secrets["MEMBER.ID_PATH"].toString()
-    val GROUP_PATH = BuildConfig.secrets["MEMBER.GROUP_PATH"].toString()
-    val USER_PATH = BuildConfig.secrets["MEMBER.USER_PATH"].toString()
-    val EDIT_PATH = BuildConfig.secrets["MEMBER.EDIT_PATH"].toString()
-    val CREATE_PATH = BuildConfig.secrets["MEMBER.CREATE_PATH"].toString()
-    val DELETE_PATH = BuildConfig.secrets["MEMBER.DELETE_PATH"].toString()
+    const val ID_PATH = "/members/id/"
+    const val GROUP_PATH = "/members/group/"
+    const val USER_PATH = "/members/user/"
+    const val EDIT_PATH = "/members/edit/"
+    const val CREATE_PATH = "/members/create/"
+    const val DELETE_PATH = "/members/delete/"
 }
 
 object GROUP{
 
-    val ID_PATH = BuildConfig.secrets["GROUP.ID_PATH"].toString()
-    val CREATE_PATH = BuildConfig.secrets["GROUP.CREATE_PATH"].toString()
-    val EDIT_PATH = BuildConfig.secrets["GROUP.EDIT_PATH"].toString()
-    val DELETE_PATH = BuildConfig.secrets["GROUP.DELETE_PATH"].toString()
+    const val ID_PATH = "/groups/id/"
+    const val CREATE_PATH = "/groups/create/"
+    const val EDIT_PATH = "/groups/edit/"
+    const val DELETE_PATH = "/groups/delete/"
 }
 object OUTLINE{
 
-    val ID_PATH = BuildConfig.secrets["OUTLINE.ID_PATH"].toString()
-    val CREATE_PATH = BuildConfig.secrets["OUTLINE.CREATE_PATH"].toString()
-    val EDIT_PATH = BuildConfig.secrets["OUTLINE.EDIT_PATH"].toString()
-    val DELETE_PATH = BuildConfig.secrets["OUTLINE.DELETE_PATH"].toString()
-    val SPECIFIC_LESSON_PATH = BuildConfig.secrets["OUTLINE.SPECIFIC_LESSON_PATH"].toString()
-    val USER_PATH = BuildConfig.secrets["OUTLINE.USER_PATH"].toString()
+    const val ID_PATH = "/outlines/id/"
+    const val CREATE_PATH = "/outlines/create/"
+    const val EDIT_PATH = "/outlines/edit/"
+    const val DELETE_PATH = "/outlines/delete/"
+    const val SPECIFIC_LESSON_PATH = "/outlines/specificLesson/"
+    const val USER_PATH = "/outlines/user/"
 }
 object SCHEDULE_TEMPLATE{
 
-    val ID_PATH = BuildConfig.secrets["SCHEDULE_TEMPLATE.ID_PATH"].toString()
-    val GROUP_PATH = BuildConfig.secrets["SCHEDULE_TEMPLATE.GROUP_PATH"].toString()
-    val DELETE_PATH = BuildConfig.secrets["SCHEDULE_TEMPLATE.DELETE_PATH"].toString()
-    val CREATE_PATH = BuildConfig.secrets["SCHEDULE_TEMPLATE.CREATE_PATH"].toString()
-    val EDIT_PATH = BuildConfig.secrets["SCHEDULE_TEMPLATE.EDIT_PATH"].toString()
+    const val ID_PATH = "/scheduleTemplates/id/"
+    const val GROUP_PATH = "/scheduleTemplates/group/"
+    const val DELETE_PATH = "/scheduleTemplates/delete/"
+    const val CREATE_PATH = "/scheduleTemplates/create/"
+    const val EDIT_PATH = "/scheduleTemplates/edit/"
 }
 object SPECIFIC_LESSON{
 
-    val ID_PATH = BuildConfig.secrets["SPECIFIC_LESSON.ID_PATH"].toString()
-    val GROUP_PATH = BuildConfig.secrets["SPECIFIC_LESSON.GROUP_PATH"].toString()
-    val CREATE_PATH = BuildConfig.secrets["SPECIFIC_LESSON.CREATE_PATH"].toString()
-    val EDIT_PATH = BuildConfig.secrets["SPECIFIC_LESSON.EDIT_PATH"].toString()
+    const val ID_PATH = "/specificLesson/id/"
+    const val GROUP_PATH = "/specificLesson/group/"
+    const val CREATE_PATH = "/specificLesson/create/"
+    const val EDIT_PATH = "/specificLesson/edit/"
 
 }
 object OUTLINE_MEDIA{
 
-    val ID_PATH = BuildConfig.secrets["OUTLINE_MEDIA.ID_PATH"].toString()
-    val OUTLINE_PATH = BuildConfig.secrets["OUTLINE_MEDIA.OUTLINE_PATH"].toString()
-    val CREATE_PATH = BuildConfig.secrets["OUTLINE_MEDIA.CREATE_PATH"].toString()
-    val DELETE_PATH = BuildConfig.secrets["OUTLINE_MEDIA.DELETE_PATH"].toString()
-    val EDIT_PATH = BuildConfig.secrets["OUTLINE_MEDIA.EDIT_PATH"].toString()
+    const val ID_PATH =  "/outlineMedias/id/"
+    const val OUTLINE_PATH =  "/outlineMedias/outline/"
+    const val CREATE_PATH =  "/outlineMedias/create/"
+    const val DELETE_PATH =  "/outlineMedias/delete/"
+    const val EDIT_PATH =  "/outlineMedias/edit/"
 }
 object OUTLINE_MEDIA_COMMENT{
 
-    val ID_PATH = BuildConfig.secrets["OUTLINE_MEDIA_COMMENT.ID_PATH"].toString()
-    val OUTLINE_MEDIA_PATH = BuildConfig.secrets["OUTLINE_MEDIA_COMMENT.OUTLINE_MEDIA_PATH"].toString()
-    val CREATE_PATH = BuildConfig.secrets["OUTLINE_MEDIA_COMMENT.CREATE_PATH"].toString()
-    val EDIT_PATH = BuildConfig.secrets["OUTLINE_MEDIA_COMMENT.EDIT_PATH"].toString()
-    val DELETE_PATH = BuildConfig.secrets["OUTLINE_MEDIA_COMMENT.DELETE_PATH"].toString()
+    const val ID_PATH = "/outlineMediaComments/id/"
+    const val OUTLINE_MEDIA_PATH = "/outlineMediaComments/outlineMedia/"
+    const val CREATE_PATH = "/outlineMediaComments/create/"
+    const val EDIT_PATH = "/outlineMediaComments/edit/"
+    const val DELETE_PATH = "/outlineMediaComments/delete/"
 }
 object LESSON_TEMPLATE{
 
-    val ID_PATH = BuildConfig.secrets["LESSON_TEMPLATE.ID_PATH"].toString()
-    val SCHEDULE_TEMPLATE_PATH = BuildConfig.secrets["LESSON_TEMPLATE.SCHEDULE_TEMPLATE_PATH"].toString()
-    val CREATE_PATH = BuildConfig.secrets["LESSON_TEMPLATE.CREATE_PATH"].toString()
-    val EDIT_PATH = BuildConfig.secrets["LESSON_TEMPLATE.EDIT_PATH"].toString()
-    val DELETE_PATH = BuildConfig.secrets["LESSON_TEMPLATE.DELETE_PATH"].toString()
+    const val ID_PATH = "/lessonTemplates/id/"
+    const val SCHEDULE_TEMPLATE_PATH = "/lessonTemplates/scheduleTemplate/"
+    const val CREATE_PATH = "/lessonTemplates/create/"
+    const val EDIT_PATH = "/lessonTemplates/edit/"
+    const val DELETE_PATH = "/lessonTemplates/delete/"
 }
 object CUSTOM_LESSON{
 
-    val ID_PATH = BuildConfig.secrets["CUSTOM_LESSON.ID_PATH"].toString()
-    val GROUP_PATH = BuildConfig.secrets["CUSTOM_LESSON.GROUP_PATH"].toString()
-    val CREATE_PATH = BuildConfig.secrets["CUSTOM_LESSON.CREATE_PATH"].toString()
-    val EDIT_PATH = BuildConfig.secrets["CUSTOM_LESSON.EDIT_PATH"].toString()
-    val DELETE_PATH = BuildConfig.secrets["CUSTOM_LESSON.DELETE_PATH"].toString()
+    const val ID_PATH = "/customLessons/id/"
+    const val GROUP_PATH = "/customLessons/group/"
+    const val CREATE_PATH = "/customLessons/create/"
+    const val EDIT_PATH = "/customLessons/edit/"
+    const val DELETE_PATH = "/customLessons/delete/"
 
 }
