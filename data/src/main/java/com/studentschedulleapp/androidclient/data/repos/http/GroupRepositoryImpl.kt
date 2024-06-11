@@ -4,7 +4,7 @@ import com.studentschedulleapp.androidclient.domain.models.Group
 import com.studentschedulleapp.androidclient.domain.repos.GroupRepository
 
 class GroupRepositoryImpl : GroupRepository {
-    override fun getById(accessToken: String): Group {
+    override fun getById(accessToken: String, id: Long): Group {
         TODO("Not yet implemented")
     }
 

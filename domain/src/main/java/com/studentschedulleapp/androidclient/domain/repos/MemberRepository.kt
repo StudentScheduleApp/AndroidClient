@@ -14,7 +14,7 @@ interface MemberRepository {
         ExternalAppException::class,
         InternalAppException::class,
         UserUnAuthorizedException::class)
-    fun getById(accessToken: String, id: Long, ): Member
+    fun getById(accessToken: String, id: Long): Member
     @Throws(
         ExternalAppException::class,
         InternalAppException::class,

@@ -12,7 +12,7 @@ interface GroupRepository {
         ExternalAppException::class,
         InternalAppException::class,
         UserUnAuthorizedException::class)
-    fun getById(accessToken: String): Group
+    fun getById(accessToken: String, id: Long): Group
     @Throws(
         ExternalAppException::class,
         InternalAppException::class,
