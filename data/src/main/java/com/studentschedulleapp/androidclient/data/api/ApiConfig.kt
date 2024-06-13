@@ -18,7 +18,10 @@ object AUTH{
 object USER{
 
     const val ID_PATH = "/users/id/"
+    const val EMAIL_PATH = "/users/email/"
     const val EDIT_PATH = "/users/edit/"
+    const val CREATE_PATH = "/members/create/"
+    const val DELETE_PATH = "/members/delete/"
 }
 object MEMBER{
 
@@ -60,6 +63,7 @@ object SPECIFIC_LESSON{
     const val GROUP_PATH = "/specificLesson/group/"
     const val CREATE_PATH = "/specificLesson/create/"
     const val EDIT_PATH = "/specificLesson/edit/"
+    const val DELETE_PATH = "/specificLesson/delete/"
 
 }
 object OUTLINE_MEDIA{

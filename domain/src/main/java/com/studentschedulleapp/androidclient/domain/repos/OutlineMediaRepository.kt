@@ -19,7 +19,7 @@ interface OutlineMediaRepository {
         ExternalAppException::class,
         InternalAppException::class,
         UserUnAuthorizedException::class)
-    fun getByGroupId(accessToken: String, id: Long): List<OutlineMedia>
+    fun getByOutlineId(accessToken: String, id: Long): List<OutlineMedia>
     @Throws(
         ExternalAppException::class,
         InternalAppException::class,

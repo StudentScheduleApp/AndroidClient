@@ -8,7 +8,7 @@ class OutlineMediaRepositoryImpl : OutlineMediaRepository {
         TODO("Not yet implemented")
     }
 
-    override fun getByGroupId(accessToken: String, id: Long): List<OutlineMedia> {
+    override fun getByOutlineId(accessToken: String, id: Long): List<OutlineMedia> {
         TODO("Not yet implemented")
     }
 
