@@ -43,7 +43,7 @@ interface LessonTemplateRetrofitService {
         @Header("Client-Version") clientVersion: String,
         @Body request: LessonTemplate,
         @Query("params") params: String
-    ): Call<LESSON_TEMPLATE>
+    ): Call<LessonTemplate>
     @DELETE(LESSON_TEMPLATE.DELETE_PATH + "/{ids}")
     fun delete(
         @Header("User-Token") accessToken: String,

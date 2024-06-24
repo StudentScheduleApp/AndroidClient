@@ -3,6 +3,7 @@ package com.studentschedulleapp.androidclient.data.api.retrofit.services
 import com.studentschedulleapp.androidclient.data.api.CUSTOM_LESSON
 import com.studentschedulleapp.androidclient.data.api.SCHEDULE_TEMPLATE
 import com.studentschedulleapp.androidclient.domain.models.CustomLesson
+import com.studentschedulleapp.androidclient.domain.models.Group
 import com.studentschedulleapp.androidclient.domain.models.ScheduleTemplate
 import retrofit2.Call
 import retrofit2.http.Body
@@ -34,8 +35,8 @@ interface ScheduleTemplateRetrofitService {
         @Header("User-Token") accessToken: String,
         @Header("Client-Token") clientToken: String,
         @Header("Client-Version") clientVersion: String,
-        @Path("id") id: Long
-    ): Call<List<ScheduleTemplate>>
+        @Body request: ScheduleTemplate
+    ): Call<ScheduleTemplate>
     @PATCH(SCHEDULE_TEMPLATE.EDIT_PATH)
     fun edit(
         @Header("User-Token") accessToken: String,
