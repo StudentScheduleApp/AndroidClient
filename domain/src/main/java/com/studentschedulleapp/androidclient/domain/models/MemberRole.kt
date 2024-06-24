@@ -1,5 +1,5 @@
 package com.studentschedulleapp.androidclient.domain.models;
 
-public enum MemberRole {
+enum class MemberRole {
     MEMBER, ADMIN, OWNER
 }

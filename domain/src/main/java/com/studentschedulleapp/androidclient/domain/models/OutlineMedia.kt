@@ -1,17 +1,8 @@
 package com.studentschedulleapp.androidclient.domain.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class OutlineMedia {
-
-    private long id;
-    private long timestamp;
-    private long outlineId;
-    private String imageUrl;
-
-}
+data class OutlineMedia (
+    var id: Long,
+    var timestamp: Long,
+    var outlineId: Long,
+    var imageUrl: String
+)

@@ -1,5 +1,5 @@
 package com.studentschedulleapp.androidclient.domain.models.tokens;
 
-public enum TokenType {
+enum class TokenType {
     ACCESS, REFRESH
 }

@@ -1,17 +1,9 @@
 package com.studentschedulleapp.androidclient.domain.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+data class CustomLesson (
+    var id: Long,
+    var groupId: Long,
+    var name: String,
+    var teacher: String
+)
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class CustomLesson {
-
-    private long id;
-    private long groupId;
-    private String name;
-    private String teacher;
-
-}

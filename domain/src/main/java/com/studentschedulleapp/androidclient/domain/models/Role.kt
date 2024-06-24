@@ -1,5 +1,5 @@
 package com.studentschedulleapp.androidclient.domain.models;
 
-public enum Role {
+enum class Role {
     USER, ADMIN, ULTIMATE;
 }
