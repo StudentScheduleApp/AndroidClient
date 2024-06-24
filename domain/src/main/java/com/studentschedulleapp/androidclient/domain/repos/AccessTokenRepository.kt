@@ -4,6 +4,6 @@ import com.studentschedulleapp.androidclient.domain.models.tokens.Token
 import com.studentschedulleapp.androidclient.domain.models.tokens.UserTokens
 
 interface AccessTokenRepository {
-    fun getAccessTokenByUID(uid: Int): Token
-    fun saveAccessToken(accessToken: Token?)
+    fun getAccessTokenByUID(uid: Long): Token?
+    fun saveAccessToken(accessToken: Token)
 }
