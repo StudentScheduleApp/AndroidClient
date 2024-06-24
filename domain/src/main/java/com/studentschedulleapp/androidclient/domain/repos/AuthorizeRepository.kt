@@ -15,14 +15,14 @@ interface AuthorizeRepository {
         InternalAppException::class,
         UserUnAuthorizedException::class,
         InvalidCredentialsException::class)
-    fun login(login: String, password: String)
+    fun login(login: String, password: String): UserTokens
     @Throws(
         ExternalAppException::class,
         InternalAppException::class,
         UserUnAuthorizedException::class,
         EmailIsUsedException::class,
         InvalidEmailException::class)
-    fun register(login: String, password: String)
+    fun register(login: String, password: String, firstName: String, lastName: String)
     @Throws(
         ExternalAppException::class,
         InternalAppException::class,
